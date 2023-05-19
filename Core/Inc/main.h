@@ -257,6 +257,7 @@ void Error_Handler(void);
 #define D10_GPIO_Port GPIOE
 #define STLK_TX_Pin GPIO_PIN_11
 #define STLK_TX_GPIO_Port GPIOB
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
