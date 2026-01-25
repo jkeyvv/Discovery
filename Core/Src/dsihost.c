@@ -73,7 +73,7 @@ void MX_DSIHOST_DSI_Init(void)
   PhyTimings.DataLaneHS2LPTime = 15;
   PhyTimings.DataLaneLP2HSTime = 25;
   PhyTimings.DataLaneMaxReadTime = 0;
-  PhyTimings.StopWaitTime = 10;
+  PhyTimings.StopWaitTime = 0;
   if (HAL_DSI_ConfigPhyTimer(&hdsi, &PhyTimings) != HAL_OK)
   {
     Error_Handler();
@@ -102,21 +102,21 @@ void MX_DSIHOST_DSI_Init(void)
   LPCmd.LPDcsShortReadNoP = DSI_LP_DSR0P_ENABLE;
   LPCmd.LPDcsLongWrite = DSI_LP_DLW_ENABLE;
   LPCmd.LPMaxReadPacket = DSI_LP_MRDP_ENABLE;
-  LPCmd.AcknowledgeRequest = DSI_ACKNOWLEDGE_DISABLE;
+  LPCmd.AcknowledgeRequest = DSI_ACKNOWLEDGE_ENABLE;
   if (HAL_DSI_ConfigCommand(&hdsi, &LPCmd) != HAL_OK)
   {
     Error_Handler();
   }
   CmdCfg.VirtualChannelID = 0;
-  CmdCfg.ColorCoding = DSI_RGB888;
-  CmdCfg.CommandSize = 200;
+  CmdCfg.ColorCoding = DSI_RGB565;
+  CmdCfg.CommandSize = 480;
   CmdCfg.TearingEffectSource = DSI_TE_EXTERNAL;
   CmdCfg.TearingEffectPolarity = DSI_TE_RISING_EDGE;
   CmdCfg.HSPolarity = DSI_HSYNC_ACTIVE_LOW;
   CmdCfg.VSPolarity = DSI_VSYNC_ACTIVE_LOW;
   CmdCfg.DEPolarity = DSI_DATA_ENABLE_ACTIVE_HIGH;
   CmdCfg.VSyncPol = DSI_VSYNC_FALLING;
-  CmdCfg.AutomaticRefresh = DSI_AR_ENABLE;
+  CmdCfg.AutomaticRefresh = DSI_AR_DISABLE;
   CmdCfg.TEAcknowledgeRequest = DSI_TE_ACKNOWLEDGE_ENABLE;
   if (HAL_DSI_ConfigAdaptedCommandMode(&hdsi, &CmdCfg) != HAL_OK)
   {

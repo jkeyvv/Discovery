@@ -71,8 +71,6 @@ void Error_Handler(void);
 #define FMC_NBL0_GPIO_Port GPIOE
 #define I2C1_SCL_Pin GPIO_PIN_8
 #define I2C1_SCL_GPIO_Port GPIOB
-#define I2S3_CK_Pin GPIO_PIN_3
-#define I2S3_CK_GPIO_Port GPIOB
 #define uSD_CLK_Pin GPIO_PIN_12
 #define uSD_CLK_GPIO_Port GPIOC
 #define SWCLK_Pin GPIO_PIN_14
@@ -219,6 +217,8 @@ void Error_Handler(void);
 #define A10_GPIO_Port GPIOG
 #define D5_Pin GPIO_PIN_8
 #define D5_GPIO_Port GPIOE
+#define LCD_RESET_Pin GPIO_PIN_7
+#define LCD_RESET_GPIO_Port GPIOH
 #define D17_Pin GPIO_PIN_9
 #define D17_GPIO_Port GPIOH
 #define D19_Pin GPIO_PIN_11
